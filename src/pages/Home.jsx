@@ -1,24 +1,24 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import Search_bar from "../components/Search_bar";
 
 export default function Home() {
-    const [username, setUsername] = useState("");
-    const navigate = useNavigate();
 
-    const handleSearch = () => {
-        if (!username) return;
-        navigate(`/results/${username}`);
-    };
     return (
-        <section className="main width-full h-screen flex items-center justify-evenly bg-gray-100">
-            <div className="main__content flex flex-col items-start justify-center gap-3">
-                <h1 className="main__title text-wrap">A new way to find github profile<br></br> and repositories.</h1>
-                <p className="main__description">Discover and explore GitHub profiles and repositories with ease.</p>
-                <input type="text" className="cursor-text" placeholder="Enter username" value={username} onChange={(e) => setUsername(e.target.value)} />
-                <button onClick={handleSearch} className="main__button bg-blue-500 text-white px-4 py-2 rounded">Search</button>            </div>
-            <div className="side__content">
-                <h2 className="side__title">Side Content</h2>
-                <p className="side__description">This is some additional content on the side.</p>
+        <section className="min-h-screen bg-linear-to-br from-gray-900 via-gray-800 to-gray-900 text-white flex flex-col md:flex-row items-center justify-center px-6 md:px-16">
+            <div className="max-w-xl w-full space-y-6 text-center md:text-left">
+                <h1 className="text-4xl md:text-6xl font-extrabold leading-tight">
+                    Explore <span className="bg-linear-to-br from-blue-300 to-blue-700 bg-clip-text text-transparent">GitHub</span> Profiles <br />
+                    Smarter & Faster
+                </h1>
+
+                <p className="text-gray-300 text-lg">
+                    Search developers, view repositories, and gain insights - all in one clean interface.
+                </p>
+                <Search_bar />
+
+            </div>
+
+            <div className="">
+                {/*animation*/}
             </div>
         </section>
     );
