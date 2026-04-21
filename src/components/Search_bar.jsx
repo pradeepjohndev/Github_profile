@@ -14,7 +14,7 @@ export default function Search_bar({ showsuggestion = true }) {
 
     return (
         <>
-            <input type="text" value={username} placeholder="Enter GitHub username..." className="flex-1 gap-4 w-100 space-x-8 bg-red-50 border rounded-2xl px-4 py-3 text-black outline-none"
+            <input type="text" value={username} placeholder="Enter GitHub username..." className="flex-1 sm:w-50 gap-4 lg:w-100 space-x-8 sm:inline-flex sm: bg-red-50 border rounded-2xl px-4 py-3 text-black outline-none"
                 onChange={(e) => setUsername(e.target.value)}
                 onKeyDown={(e) => e.key === "Enter" && handleSearch()} />
             <button onClick={handleSearch} className="bg-blue-500 hover:bg-blue-600 rounded-2xl hover:cursor-pointer transition px-6 py-3 font-semibold">

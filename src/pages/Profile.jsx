@@ -28,6 +28,7 @@ export default function Profile() {
         fetchRepos(), fetchUser();
     }, [username]);
 
+
     if (!user) return <p>Loading...</p>;
 
     return (
@@ -37,13 +38,13 @@ export default function Profile() {
                 <div className="max-w-5xl mx-auto bg-gray-800 rounded-2xl shadow-lg p-6">
                     <div className="flex flex-col md:flex-row items-center md:items-start gap-6">
                         <img src={user.avatar_url} alt="avatar" className="w-28 h-28 rounded-full border-4 border-gray-700 shadow-md" />
-                        <div className="flex-1 text-center md:text-left">
+                        <div className="flex-1  text-center md:text-left md:">
                             <h2 className="text-2xl font-bold">{user.name}</h2>
                             <p className="text-gray-400">@{user.login}</p>
                             <p className="mt-2 text-gray-300">{user.bio || "No bio available"}</p>
                             <p className="mt-2 text-sm text-gray-400 inline-flex items-baseline gap-2"><FaLocationDot />{user.location || "Unknown"}</p>
 
-                            <button onClick={() => window.open(user.html_url, "_blank")} className="mt-4 block hover:cursor-pointer px-5 py-2 rounded-lg bg-blue-500 text-white font-medium hover:bg-blue-600 transition">
+                            <button onClick={() => window.open(user.html_url, "_blank")} className="m-4 md:flex md:items-center hover:cursor-pointer px-5 py-2 rounded-lg bg-blue-500 text-white font-medium hover:bg-blue-600 transition">
                                 Visit GitHub
                             </button>
                         </div>
